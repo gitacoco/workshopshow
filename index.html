@@ -15,10 +15,11 @@
 
 <body>
   <!-- Swiper -->
-  <img src="media/title/space.png" class="titleImage" alt="Title: Space and Architecture">
+
   <div class="swiper-container mySwiper">
     <div class="swiper-wrapper">
       <div id="yaqiTang" class="swiper-slide">
+        <img src="media/title/space.png" class="titleImage" alt="Title: Space and Architecture">
         <img align="left" class="coverImage" src="media/img/yaqiTang.png"
           alt="Yaqi Tang: The Outstanding Graduates of the Architectural Association">
         <h1>设计以美，建筑以真</h1>
@@ -49,6 +50,7 @@
         <h2>吴晓彤 许娇娇</h2>
       </div>
       <div class="swiper-slide">
+        <img src="media/title/art.png" class="titleImage" alt="Title: Art and Culture">
         <img align="left" class="coverImage" src="media/img/yalingWang.png"
           alt="Yaqi Tang: The Outstanding Graduates of the Architectural Association">
         <h1>碑刻千年</h1>
@@ -67,6 +69,7 @@
         <h2>承珂冰 裴昕宇</h2>
       </div>
       <div class="swiper-slide">
+        <img src="media/title/human.png" class="titleImage" alt="Title: The future of humanity">
         <img align="left" class="coverImage" src="media/img/shuoGu.png"
           alt="Yaqi Tang: The Outstanding Graduates of the Architectural Association">
         <h1>消失的婴儿潮</h1>
@@ -91,6 +94,7 @@
         <h2>朱亦然</h2>
       </div>
       <div class="swiper-slide">
+        <img src="media/title/network.png" class="titleImage" alt="Title: Network and Daily Life">
         <img align="left" class="coverImage" src="media/img/jingChen.png"
           alt="Yaqi Tang: The Outstanding Graduates of the Architectural Association">
         <h1>梦境投射</h1>
@@ -109,7 +113,11 @@
         <h2>周晨菲</h2>
       </div>
     </div>
+  </div>
+  <div id="control">
+    <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
   </div>
 
   <!-- Initialize Swiper -->
@@ -138,10 +146,15 @@
         1600: {
           slidesPerView: 5,
           spaceBetween: 0,
-          // slidesPerGroup: 5
+          slidesPerGroup: 5
         }
       },
-      loop: false,
+      autoplay: {
+        delay: 3000,
+        // disableOnInteraction: true,
+        pauseOnMouseEnter: true,
+      },
+      loop: true,
       mousewheel: true,
       // preventClicks: true,
       keyboard: true,
