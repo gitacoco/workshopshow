@@ -35,7 +35,15 @@ body {
   align-items: center;
 }
 
-.swiper-slide img {
+.titleImage {
+  position: fixed;
+  left: 50px;
+  top: 50px;
+  width: 20%;
+  z-index: 10;
+}
+
+.coverImage {
   position: absolute;
   right: 0;
   object-fit: cover;
@@ -46,9 +54,9 @@ body {
   height: 500px;
 }
 
-.swiper-slide img:hover {
+.coverImage:hover {
   filter: grayscale(0);
-  width: 285px; 
+  width: 350px; 
   position: absolute;
   cursor: pointer;
 }
@@ -74,7 +82,7 @@ h2 {
 
 .swiper-pagination-bullet {
   background: white;
-  width: 20px;
-  height: 20px;
-  margin-bottom: 50px;
+  width: 10px;
+  height: 10px;
+  margin-bottom: 1% !important;
 }
