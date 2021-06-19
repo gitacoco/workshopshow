@@ -55,14 +55,22 @@ var swiper = new Swiper(".swiper-container", {
         this.slideTo(this.clickedIndex);
       }
     },
-    slideChangeTransitionEnd: function () {
-      const groupId = $(".swiper-slide-active").prev().prev().attr('data-group');
-      $(`.title img`).hide();
-      $(`.title img.group${groupId}-title`).show();
-    },
   },
 });
 
 $(window).on('hashchange', () => {
   $('video')[0].pause();
 });
+
+setInterval(() => {
+  const groupId = $(".swiper-slide-active").prev().prev().attr('data-group');
+  $(`.title img`).hide();
+  $(`.title img.group${groupId}-title`).show();
+  const prevGroupId = $(".swiper-slide-active").prev().prev().prev().attr('data-group');
+
+  if (groupId !== prevGroupId) {
+    $(".swiper-slide-active").prev().prev().find('.titleImage').hide();
+  } else {
+    $(".swiper-slide").prev().prev().find('.titleImage').show();
+  }
+}, 8);
