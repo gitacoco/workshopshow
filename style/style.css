@@ -28,6 +28,7 @@ body {
 
 .swiper-slide {
   width: 20%;
+  transition: all 1s;
 }
 
 /* .swiper-slide-active {
@@ -36,6 +37,7 @@ body {
 
 .expanded {
   width: 40%;
+  transform: translateX(20%);
 }
 
 .titleImage {
