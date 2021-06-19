@@ -70,7 +70,28 @@ h1 {
   right: 40px;
   bottom: 15%;
   font-size: 25px;
+}
+
+.group1 h1 {
   background: -webkit-linear-gradient(180deg, #88e3f9, #278bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.group2 h1 {
+  background: -webkit-linear-gradient(180deg, #FFC24A, #FF5C00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.group3 h1 {
+  background: -webkit-linear-gradient(180deg, #FB4AFF, #6d12ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.group4 h1 {
+  background: -webkit-linear-gradient(180deg, #90DA47, #3CDC99);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -81,6 +102,7 @@ h2 {
   bottom: 12%;
   font-size: 20px;
   color: #eee;
+  font-weight: 300;
 }
 
 #control {
