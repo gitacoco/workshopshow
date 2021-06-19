@@ -25,6 +25,7 @@ var swiper = new Swiper(".swiper-container", {
   //       slidesPerGroup: 1,
   //     },
   //   },
+  initialSlide: 2,
   slidesPerView: "auto",
   spaceBetween: 0,
   slidesPerGroup: 1,
@@ -55,15 +56,24 @@ var swiper = new Swiper(".swiper-container", {
       }
     },
     slideChangeTransitionEnd: function () {
-      // $(".swiper-slide-active h1").click(function() {
-      //     alert( "杀掉你" );
-      //   });
-      $(".swiper-slide-prev").removeClass("expanded");
-      $(".swiper-slide-next").removeClass("expanded");
-      $(".swiper-slide-active").addClass("expanded");
+      const groupId = $(".swiper-slide-active").prev().prev().attr('data-group');
+      $(`.title img`).hide();
+      $(`.title img.group${groupId}-title`).show();
     },
   },
 });
-
+// $('#click-me').on('click', () => {
+//   $(".swiper-slide-prev").removeClass("expanded");
+//   $(".swiper-slide-next").removeClass("expanded");
+//   $(".swiper-slide-active").addClass("expanded");
+// });
 // $(".swiper-slide-prev").removeClass("expanded");
 // $(".swiper-slide-next").removeClass("expanded");
+$('body').on('click', '.swiper-slide-active h1', () => {
+  $(".swiper-slide-active").addClass("expanded");
+  swiper.translateTo(swiper.translate - document.documentElement.clientWidth / 5 * 2, 1000);
+  $('#control').fadeOut();
+  setTimeout(() => {
+    $('#real-content').show();
+  }, 1000);
+});
