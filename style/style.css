@@ -213,9 +213,6 @@ h2 {
   opacity: 1;
 }
 
-.overlay:target video {
-
-}
 
 .popup {
   margin: 10% auto;

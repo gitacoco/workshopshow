@@ -31,7 +31,7 @@ var swiper = new Swiper(".swiper-container", {
   centeredSlides: true,
   centeredSlidesBounds: true,
   direction: "horizontal",
-//   freeMode: true,
+  //   freeMode: true,
   loop: true,
   mousewheel: false,
   preloadImages: true,
@@ -54,15 +54,16 @@ var swiper = new Swiper(".swiper-container", {
         this.slideTo(this.clickedIndex);
       }
     },
-    // slideChangeTransitionEnd: function () {
-    //     $(".swiper-slide-active h1").click(function() {
-    //         alert( "杀掉你" );
-    //       });
-    // },
+    slideChangeTransitionEnd: function () {
+      // $(".swiper-slide-active h1").click(function() {
+      //     alert( "杀掉你" );
+      //   });
+      $(".swiper-slide-prev").removeClass("expanded");
+      $(".swiper-slide-next").removeClass("expanded");
+      $(".swiper-slide-active").addClass("expanded");
+    },
   },
 });
-
-
 
 // $(".swiper-slide-prev").removeClass("expanded");
 // $(".swiper-slide-next").removeClass("expanded");
