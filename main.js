@@ -51,18 +51,9 @@ var swiper = new Swiper(".swiper-container", {
   },
   on: {
     click: function (swiper, e) {
-      if (typeof this.clickedIndex !== "undefined" && this.clickedIndex !== this.activeIndex && !pulled) {
+      if (typeof this.clickedIndex !== "undefined" && !pulled) {
         this.slideTo(this.clickedIndex);
-        setTimeout(() => {
-          pull();
-        }, 500);
       }
-    },
-    slideChangeTransitionStart: function() {
-      $(".swiper-slide-active").removeClass('enable-pull');
-    },
-    slideChangeTransitionEnd: function() {
-      $(".swiper-slide-active").addClass('enable-pull');
     },
   },
 });
@@ -135,7 +126,7 @@ const clearPull = () => {
   $('.swiper-slide-active').find('.pulled-content').hide();
 };
 
-$('body').on('click', '.swiper-slide-active.enable-pull h1', function() {
+$('body').on('click', '.swiper-slide-active h1', function() {
   pull()
 });
 
