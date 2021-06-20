@@ -265,8 +265,8 @@ video {
 }
 
 .text-wrapper p {
-  font-size: 1em;
-  line-height: 28px;
+  font-size: 1.5vh;
+  line-height: 2.7vh;
   width: 45%;
   margin-top: 0;
   text-align: left;
