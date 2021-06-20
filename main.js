@@ -25,11 +25,9 @@ var swiper = new Swiper(".swiper-container", {
   },
   on: {
     click: function (swiper, e) {
-      setTimeout(() => {
-        if (typeof this.clickedIndex !== "undefined" && !pulled) {
-          this.slideTo(this.clickedIndex);
-        }
-      });
+      if (typeof this.clickedIndex !== "undefined" && !pulled) {
+        this.slideTo(this.clickedIndex);
+      }
     },
   },
 });
@@ -144,7 +142,8 @@ const clearPull = () => {
   $(".swiper-slide-active").find(".pulled-content").hide();
 };
 
-$("body").on("click", ".swiper-slide-active h1,h2,img", function () {
+$("body").on("click", ".swiper-slide-active h1,h2,img", function (e) {
+  if (swiper.animating) { return; }
   pull();
 });
 
