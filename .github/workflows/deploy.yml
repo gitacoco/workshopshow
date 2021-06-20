@@ -15,7 +15,7 @@ jobs:
       - name: Deploy 🚀
         uses: go-choppy/ossutil-github-action@master
         with:
-            ossArgs: 'cp -r -u ./build oss://nuaworkshop'
+            ossArgs: 'cp -r -u ./ oss://nuaworkshop'
             accessKey: ${{ secrets.ALIYUN_ACCESS_KEY }}
             accessSecret: ${{ secrets.ALIYUN_ACCESS_SECRET }}
             endpoint: oss-accelerate.aliyuncs.com
