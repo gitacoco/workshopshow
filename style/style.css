@@ -281,14 +281,7 @@ h4 {
   pointer-events: none;
 }
 
-
 /* 以下是收起按钮 */
-.inside-button {
-  position: absolute;
-  bottom: 15%;
-  width: 100%;
-}
-
 .back {
   position: absolute;
   right: 40px;
@@ -302,91 +295,96 @@ h4 {
 }
 
 /* 以下是button */
-
-
-button, button::after {
-  margin-right: 5px;
-  width: 200px;
-  height: 50px;
-  font-size: 20px;
-  background: linear-gradient(45deg, transparent 5%, #414141 5%);
-  border: 0;
-  color: #fff;
-  letter-spacing: 3px;
-  box-shadow: 6px 0px 0px #ffffff;
-  outline: transparent;
-  position: relative;
-  cursor: pointer;
-}
-
-button::after {
-  --slice-0: inset(50% 50% 50% 50%);
-  --slice-1: inset(80% -6px 0 0);
-  --slice-2: inset(50% -6px 30% 0);
-  --slice-3: inset(10% -6px 85% 0);
-  --slice-4: inset(40% -6px 43% 0);
-  --slice-5: inset(80% -6px 5% 0);
-  
-  content: '体验项目';
-  display: block;
+.inside-button {
   position: absolute;
-  top: 0;
-  left: 0;
+  left: -20.5%;
+  bottom: 13%;
+  width: 100%;
+  transform: scale(0.33);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.effect1 {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 24px;
+  position: relative;
+  padding: 10px 50px 10px 20px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: scale(3);
+      -ms-transform: scale(3);
+          transform: scale(3); /*change scale(3) to scale(1)*/
+}
+
+.effect1 .bg {
+  background: rgb(255, 255, 255);
+  width: 30px;
+  height: 2px;
+  position: absolute;
   right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #ffffff 3%, #ffffff 5%, #ffffff 5%);
-  text-shadow: -3px -3px 0px #8305f8, 3px 3px 0px #000000;
-  clip-path: var(--slice-0);
+  top: 50%;
+  margin-top: -1px;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-button:hover::after {
-  animation: 1s glitch;
-  animation-timing-function: steps(2, end);
+.effect1:hover {
+  padding-right: 20px;
+  color: rgb(0, 0, 0);
 }
 
-@keyframes glitch {
-  0% {
-    clip-path: var(--slice-1);
-    transform: translate(-20px, -10px);
-  }
-  10% {
-    clip-path: var(--slice-3);
-    transform: translate(10px, 10px);
-  }
-  20% {
-    clip-path: var(--slice-1);
-    transform: translate(-10px, 10px);
-  }
-  30% {
-    clip-path: var(--slice-3);
-    transform: translate(0px, 5px);
-  }
-  40% {
-    clip-path: var(--slice-2);
-    transform: translate(-5px, 0px);
-  }
-  50% {
-    clip-path: var(--slice-3);
-    transform: translate(5px, 0px);
-  }
-  60% {
-    clip-path: var(--slice-4);
-    transform: translate(5px, 10px);
-  }
-  70% {
-    clip-path: var(--slice-2);
-    transform: translate(-10px, 10px);
-  }
-  80% {
-    clip-path: var(--slice-5);
-    transform: translate(20px, -10px);
-  }
-  90% {
-    clip-path: var(--slice-1);
-    transform: translate(-10px, 0px);
-  }
-  100% {
-    clip-path: var(--slice-1);
-    transform: translate(0);
-  }
+.effect1:hover .bg {
+  height: 100%;
+  width: 100%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.effect1 .bg:before, .effect1 .bg:after {
+  content: '';
+  height: 2px;
+  width: 10px;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  right: -2px;      
+  -webkit-transition: all 0.3s;      
+  -o-transition: all 0.3s;      
+  transition: all 0.3s;
+}
+
+.effect1 .bg:before {
+  bottom: 3px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.effect1 .bg:after{
+  top: 3px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.effect1:hover .bg:before,
+.effect1:hover .bg:after{
+  right: 0;
+}
+
+.effect1:hover .bg:before{
+  bottom: 6px;
+}
+
+.effect1:hover .bg:after{
+  top: 6px;
 }
