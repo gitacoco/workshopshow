@@ -25,9 +25,11 @@ var swiper = new Swiper(".swiper-container", {
   },
   on: {
     click: function (swiper, e) {
-      if (typeof this.clickedIndex !== "undefined" && !pulled) {
-        this.slideTo(this.clickedIndex);
-      }
+      setTimeout(() => {
+        if (typeof this.clickedIndex !== "undefined" && !pulled) {
+          this.slideTo(this.clickedIndex);
+        }
+      });
     },
   },
 });
