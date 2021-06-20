@@ -41,9 +41,11 @@ body {
 }
 .swiper-slide-container.prev {
   transform: translateX(-150%) !important;
+  opacity: 20%;
 }
 .swiper-slide-container.next {
   transform: translateX(150%) !important;
+  opacity: 50%;
 }
 .expanded {
   width: 200%;
@@ -263,6 +265,7 @@ video {
 }
 
 .text-wrapper p {
+  font-size: 1em;
   line-height: 28px;
   width: 45%;
   margin-top: 0;
@@ -286,24 +289,11 @@ h4 {
   pointer-events: none;
 }
 
-/* 以下是收起按钮 */
-.back {
-  position: absolute;
-  right: 40px;
-  font-size: 30px;
-  text-decoration: none;
-  color: white;
-}
-
-.back:hover {
-  color: #88e3f9;
-}
-
 /* 以下是button */
 .inside-button {
   position: absolute;
-  left: -20.5%;
-  bottom: 13%;
+  left: -21%;
+  bottom: 15%;
   width: 100%;
   transform: scale(0.33);
   display: -webkit-box;
@@ -392,4 +382,73 @@ h4 {
 
 .effect1:hover .bg:after{
   top: 6px;
+}
+
+/* 返回键 */
+.back {
+  position: absolute;
+  right: 40px;
+  /* margin-top: 8%; */
+  /* font-size: 10px; */
+  text-decoration: none;
+  /* color: white; */
+}
+
+
+.back-button {
+  color: white;
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  color: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  /* left: 50%; */
+  /* letter-spacing: 1.5px; */
+  /* line-height: 90px; */
+  outline: none;
+  overflow: hidden;
+  padding: 1px 0;
+  text-align: center;
+  /* position: absolute; */
+  /* text-transform: uppercase; */
+  /* top: 50%; */
+  transform: translate(0, 0);
+  transition: all 0.2s ease-in;
+  width: 50px;
+  height: 50px;
+}
+
+.back-button::before,
+.back-button::after {
+  background-color: white;
+  content: '';
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transform-origin: center left;
+  transition: all 0.2s ease-in;
+  width: 141.4214px;
+  z-index: -1;
+}
+
+.back-button::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.back-button::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.back-button:hover {
+  color: #000000;
+}
+
+.back-button:hover::before,
+.back-button:hover::after {
+  height: 50px;
+  transform: rotate(0deg);
 }
