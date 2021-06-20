@@ -1,0 +1,27 @@
+name: Build and Deploy to zhibang.design
+on:
+  push:
+    branches: 
+      - 'master'
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
+
+      - name: Deploy 🚀
+        uses: go-choppy/ossutil-github-action@master
+        with:
+            ossArgs: 'cp -r -u ./build oss://nuaworkshop'
+            accessKey: ${{ secrets.ALIYUN_ACCESS_KEY }}
+            accessSecret: ${{ secrets.ALIYUN_ACCESS_SECRET }}
+            endpoint: oss-accelerate.aliyuncs.com
+
+      - name: Refresh CDN
+        run: |
+          yarn add aliyun-cdn-refresh-cli
+          npx aliyun-cdn-refresh --ObjectPath https://nuashow.zhibang.design/ --ObjectType Directory --AccessKeyId ${{ secrets.ALIYUN_ACCESS_KEY }} --AccessKeySecret ${{ secrets.ALIYUN_ACCESS_SECRET }}
+          npx aliyun-cdn-refresh --ObjectPath http://nuashow.zhibang.design/ --ObjectType Directory --AccessKeyId ${{ secrets.ALIYUN_ACCESS_KEY }} --AccessKeySecret ${{ secrets.ALIYUN_ACCESS_SECRET }}
