@@ -209,16 +209,6 @@ h2 {
   z-index: 10;
 } */
 
-
-@media screen and (max-width: 700px) {
-  .box {
-    width: 70%;
-  }
-  .popup {
-    width: 70%;
-  }
-}
-
 .title {
   position: absolute;
 }
@@ -300,8 +290,8 @@ h4 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .effect1 {
@@ -315,8 +305,8 @@ h4 {
   -o-transition: all 0.3s;
   transition: all 0.3s;
   -webkit-transform: scale(3);
-      -ms-transform: scale(3);
-          transform: scale(3); /*change scale(3) to scale(1)*/
+  -ms-transform: scale(3);
+  transform: scale(3); /*change scale(3) to scale(1)*/
 }
 
 .effect1 .bg {
@@ -342,45 +332,46 @@ h4 {
   height: 100%;
   width: 100%;
   -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 
-.effect1 .bg:before, .effect1 .bg:after {
-  content: '';
+.effect1 .bg:before,
+.effect1 .bg:after {
+  content: "";
   height: 2px;
   width: 10px;
   background: rgb(255, 255, 255);
   position: absolute;
-  right: -2px;      
-  -webkit-transition: all 0.3s;      
-  -o-transition: all 0.3s;      
+  right: -2px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 .effect1 .bg:before {
   bottom: 3px;
   -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
-.effect1 .bg:after{
+.effect1 .bg:after {
   top: 3px;
   -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .effect1:hover .bg:before,
-.effect1:hover .bg:after{
+.effect1:hover .bg:after {
   right: 0;
 }
 
-.effect1:hover .bg:before{
+.effect1:hover .bg:before {
   bottom: 6px;
 }
 
-.effect1:hover .bg:after{
+.effect1:hover .bg:after {
   top: 6px;
 }
 
@@ -393,7 +384,6 @@ h4 {
   text-decoration: none;
   /* color: white; */
 }
-
 
 .back-button {
   color: white;
@@ -422,7 +412,7 @@ h4 {
 .back-button::before,
 .back-button::after {
   background-color: white;
-  content: '';
+  content: "";
   display: block;
   height: 1px;
   left: 0;
@@ -451,4 +441,86 @@ h4 {
 .back-button:hover::after {
   height: 50px;
   transform: rotate(0deg);
+}
+
+/* Smartphones ----------- */
+@media only screen and (max-device-width: 450px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+
+  .swiper-slide {
+    height: 20%;
+    width: 100%;
+    transition: all 1s;
+  }
+
+  .coverImage {
+    position: absolute;
+    opacity: 80%;
+    /* center vertically */
+    transform: rotate(90deg);
+    /* align to right */
+    top: 10%;
+    right: 40%;
+    /* margin-bottom: 60px; */
+    object-fit: cover;
+    object-position: left top;
+    /* animated transition */
+    filter: grayscale(1);
+    transition: 1s;
+    width: 300px;
+    height: 500px;
+  }
+
+  h1 {
+    position: absolute;
+    right: 40px;
+    bottom: 25%;
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .swiper-pagination {
+    width: fit-content;
+    position: fixed;
+    left: -7%;
+    bottom: 10%;
+    transform: rotate(90deg);
+  }
+
+  .swiper-slide-container.active {
+    width: 100%;
+    height: 400%;
+  }
+  .swiper-slide-container.prev {
+    transform: translateY(-150%) !important;
+    opacity: 20%;
+  }
+  .swiper-slide-container.next {
+    transform: translateY(150%) !important;
+    opacity: 50%;
+  }
+
+  .text-wrapper p {
+    font-size: 1.5vh;
+    line-height: 2.7vh;
+    width: 90%;
+    margin-top: 0;
+    text-align: left;
+  }
+
+  video {
+    position: absolute;
+    top: 52%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    width: 80%;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    background-color: black;
+  }
 }
