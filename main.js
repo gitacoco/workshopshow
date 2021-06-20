@@ -111,12 +111,10 @@ const pull = () => {
   $('.swiper-slide-active').prev().find('.swiper-slide-container').addClass('prev');
   $('.swiper-slide-active').prev().prev().find('.swiper-slide-container').addClass('prev');
   showTitleForActive();
-  $('.swiper-slide-active').find('.pulled-content').show();
   $('#control').fadeOut();
   $('.swiper-slide').addClass('swiper-no-swiping');
-  swiper.simulateTouch = false;
-  swiper.update();
   pulled = true;
+  $('.swiper-slide-active').find('.pulled-content').show();
 };
 const clearPull = () => {
   $('.swiper-slide-active').find('.swiper-slide-container').removeClass('active');
@@ -133,9 +131,8 @@ const clearPull = () => {
   showTitleForGroup();
   $('#control').fadeIn();
   $('.swiper-slide').removeClass('swiper-no-swiping');
-  swiper.simulateTouch = true;
-  swiper.update();
   pulled = false;
+  $('.swiper-slide-active').find('.pulled-content').hide();
 };
 
 $('body').on('click', '.swiper-slide-active.enable-pull h1', function() {
