@@ -211,52 +211,6 @@ h2 {
   z-index: 10;
 } */
 
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 50;
-  pointer-events: none;
-}
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.popup {
-  margin: 10% auto;
-  padding: 20px;
-  background: #fff;
-  width: 30%;
-  position: relative;
-  transition: all 5s ease-in-out;
-}
-
-.popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-.popup .close:hover {
-  color: #06d85f;
-}
-.popup .content {
-  max-height: 30%;
-  overflow: auto;
-  line-height: 30px;
-}
 
 @media screen and (max-width: 700px) {
   .box {
@@ -265,16 +219,6 @@ h2 {
   .popup {
     width: 70%;
   }
-}
-
-video {
-  margin-top: 20px;
-}
-
-#explore {
-  margin-top: 20px;
-  left: 0;
-  right: 0;
 }
 
 .title {
@@ -305,6 +249,7 @@ video {
 }
 
 video {
+  margin-top: 20px;
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: contain;
@@ -343,6 +288,13 @@ h4 {
   color: white;
   text-decoration: none;
   font-size: 30px;
+}
+
+.disabled {
+  color: gray;
+  text-decoration: none;
+  font-size: 30px;
+  pointer-events: none;
 }
 
 .explore:hover {
