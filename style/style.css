@@ -242,7 +242,12 @@ h2 {
 }
 
 video {
-  margin-top: 25px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
   width: 60%;
   aspect-ratio: 16/9;
   object-fit: contain;
