@@ -153,3 +153,7 @@ $("body").on("click", ".back", (e) => {
 });
 
 showTitleForGroup();
+
+$("html").on("contextmenu",function(e){
+  return false;
+});
