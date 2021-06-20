@@ -25,11 +25,11 @@ var swiper = new Swiper(".swiper-container", {
   },
   on: {
     click: function (swiper, e) {
-      setTimeout(() => {
+    //   setTimeout(() => {
         if (typeof this.clickedIndex !== "undefined" && !pulled) {
           this.slideTo(this.clickedIndex);
         }
-      });
+    //   });
     },
   },
 });
