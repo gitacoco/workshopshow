@@ -19,10 +19,6 @@ body {
 }
 
 .swiper-slide {
-  text-align: center;
-}
-
-.swiper-slide {
   width: 20%;
   transition: all 1s;
 }
@@ -238,28 +234,23 @@ h2 {
 }
 
 .pull-wrapper {
-  width: 63%;
+  width: 100%;
   height: 100%;
-  /* display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  text-align: left; */
-  margin-top: 180px;
+  margin-top: 8%;
   margin-left: 10%;
   right: 200px;
 }
 
 video {
   margin-top: 25px;
-  width: 100%;
+  width: 60%;
   aspect-ratio: 16/9;
   object-fit: contain;
   background-color: black;
 }
 
 .text-wrapper {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -268,7 +259,7 @@ video {
 
 .text-wrapper p {
   line-height: 28px;
-  width: 65%;
+  width: 45%;
   margin-top: 0;
   text-align: left;
 }
@@ -293,16 +284,14 @@ h4 {
 
 /* 以下是收起按钮 */
 .inside-button {
-  /* margin-top: 5%; */
   position: absolute;
   bottom: 15%;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
 }
 
 .back {
+  position: absolute;
+  right: 40px;
   font-size: 30px;
   text-decoration: none;
   color: white;
