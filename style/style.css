@@ -234,22 +234,24 @@ h2 {
   top: 0px;
   left: 0px;
   color: white;
+  height: 100%;
 }
 
 .pull-wrapper {
   width: 63%;
-  display: flex;
+  height: 100%;
+  /* display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  text-align: left;
+  text-align: left; */
   margin-top: 180px;
   margin-left: 10%;
   right: 200px;
 }
 
 video {
-  margin-top: 20px;
+  margin-top: 25px;
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: contain;
@@ -268,6 +270,7 @@ video {
   line-height: 28px;
   width: 65%;
   margin-top: 0;
+  text-align: left;
 }
 
 h3 {
@@ -283,6 +286,22 @@ h4 {
   font-family: Tahoma, Arial, sans-serif;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
+
+/* 以下是收起按钮 */
+.inside-button {
+  /* margin-top: 5%; */
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .back {
   font-size: 30px;
   text-decoration: none;
@@ -291,27 +310,6 @@ h4 {
 
 .back:hover {
   color: #88e3f9;
-}
-
-.explore {
-margin-top: 5px;
-}
-
-.disabled {
-  pointer-events: none;
-}
-
-.explore:hover {
-  color: #88e3f9;
-}
-
-.inside-button {
-  margin-top: 5%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-  justify-content: flex-start;
 }
 
 /* 以下是button */
